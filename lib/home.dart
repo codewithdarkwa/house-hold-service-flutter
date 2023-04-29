@@ -13,164 +13,177 @@ class _HomePageState extends State<HomePage> {
     String dropdownValue = 'Option 1';
 
     return Scaffold(
-      backgroundColor: const Color(0xfff4f6fa),
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.min,
-                    children: const [
-                      Text(
-                        'Good Morning',
-                        style: TextStyle(color: Colors.grey),
-                      ),
-                      Text(
-                        'CodeWithDarkwa',
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.all(5),
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(10)),
-                        child: Row(
-                          children: const [
-                            Icon(Icons.star, color: Color(0xff3f99a0e)),
-                            Text('4.89',
-                                style: TextStyle(fontWeight: FontWeight.bold)),
-                          ],
+        backgroundColor: const Color(0xfff4f6fa),
+        body: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: const [
+                        Text(
+                          'Good Morning',
+                          style: TextStyle(color: Colors.grey),
                         ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 12.0),
-                        child: Container(
+                        Text(
+                          'CodeWithDarkwa',
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Container(
                           padding: const EdgeInsets.all(5),
                           decoration: BoxDecoration(
                               color: Colors.white,
-                              borderRadius: BorderRadius.circular(8)),
-                          child: const Icon(Icons.notifications_outlined),
+                              borderRadius: BorderRadius.circular(10)),
+                          child: Row(
+                            children: const [
+                              Icon(Icons.star, color: Color(0xff3f99a0e)),
+                              Text('4.89',
+                                  style:
+                                      TextStyle(fontWeight: FontWeight.bold)),
+                            ],
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              const SizedBox(height: 25),
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 7),
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(8)),
-                child: DropdownButton(
-                  value: dropdownValue,
-                  icon:
-                      const Icon(Icons.keyboard_arrow_down, color: Colors.grey),
-                  iconSize: 24,
-                  hint: const Text('Choose job category'),
-                  isExpanded: true,
-                  underline: Container(),
-                  onChanged: (String? newValue) {
-                    setState(() {
-                      dropdownValue = newValue!;
-                    });
-                  },
-                  items: ['Option 1', 'Option 2', 'Option 3', 'Option 4']
-                      .map((String value) {
-                    return DropdownMenuItem(
-                      value: value,
-                      child: Text(value),
-                    );
-                  }).toList(),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 12.0),
+                          child: Container(
+                            padding: const EdgeInsets.all(5),
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(8)),
+                            child: const Icon(Icons.notifications_outlined),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 12.0),
-                child: Container(
-                  height: 48,
+                const SizedBox(height: 25),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 7),
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(8)),
-                  child: TextFormField(
-                    decoration: const InputDecoration(
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide.none,
+                  child: DropdownButton(
+                    value: dropdownValue,
+                    icon: const Icon(Icons.keyboard_arrow_down,
+                        color: Colors.grey),
+                    iconSize: 24,
+                    hint: const Text('Choose job category'),
+                    isExpanded: true,
+                    underline: Container(),
+                    onChanged: (String? newValue) {
+                      setState(() {
+                        dropdownValue = newValue!;
+                      });
+                    },
+                    items: ['Option 1', 'Option 2', 'Option 3', 'Option 4']
+                        .map((String value) {
+                      return DropdownMenuItem(
+                        value: value,
+                        child: Text(value),
+                      );
+                    }).toList(),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 12.0),
+                  child: Container(
+                    height: 48,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(8)),
+                    child: TextFormField(
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide.none,
+                        ),
+                        prefixIcon: Icon(Icons.location_on_outlined,
+                            color: Colors.grey),
+                        hintText: 'Location',
+                        hintStyle: TextStyle(color: Colors.grey),
                       ),
-                      prefixIcon:
-                          Icon(Icons.location_on_outlined, color: Colors.grey),
-                      hintText: 'Location',
-                      hintStyle: TextStyle(color: Colors.grey),
                     ),
                   ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 8.0),
-                child: SizedBox(
-                  width: double.infinity,
-                  child: ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xff529A69)),
-                      child: const Text('Search Job')),
+                Padding(
+                  padding: const EdgeInsets.only(top: 8.0),
+                  child: SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0xff529A69)),
+                        child: const Text('Search Job')),
+                  ),
                 ),
-              ),
-              const SizedBox(height: 20),
-              Expanded(
-                child: Container(
-                    decoration: const BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(20),
-                        topRight: Radius.circular(20),
-                      ),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: SingleChildScrollView(
-                        child: Column(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: const [
-                                  Text(
-                                    'Search Result',
-                                    style: TextStyle(
-                                        fontSize: 17, color: Colors.grey),
-                                  ),
-                                  Text(
-                                    'See all',
-                                    style: TextStyle(color: Colors.green),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            const JobDetail(),
-                            const JobDetail(),
-                            const JobDetail(),
-                          ],
+                const SizedBox(height: 20),
+                Expanded(
+                  child: Container(
+                      decoration: const BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(20),
+                          topRight: Radius.circular(20),
                         ),
                       ),
-                    )),
-              )
-            ],
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: SingleChildScrollView(
+                          child: Column(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: const [
+                                    Text(
+                                      'Search Result',
+                                      style: TextStyle(
+                                          fontSize: 17, color: Colors.grey),
+                                    ),
+                                    Text(
+                                      'See all',
+                                      style: TextStyle(color: Colors.green),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              const JobDetail(),
+                              const JobDetail(),
+                              const JobDetail(),
+                            ],
+                          ),
+                        ),
+                      )),
+                )
+              ],
+            ),
           ),
         ),
-      ),
-    );
+        bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          selectedItemColor: Colors.green,
+          items: const [
+            BottomNavigationBarItem(
+                icon: Icon(Icons.home_outlined), label: 'Home'),
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Calendar'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.bookmark_outline), label: 'Job saved'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.person_outline), label: 'Profile'),
+          ],
+        ));
   }
 }
 
