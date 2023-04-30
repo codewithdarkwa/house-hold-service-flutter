@@ -1,3 +1,4 @@
+import 'package:badges/badges.dart' as badges;
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -59,7 +60,11 @@ class _HomePageState extends State<HomePage> {
                           decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(8)),
-                          child: const Icon(Icons.notifications_outlined),
+                          child: const badges.Badge(
+                            badgeContent: Text('3',
+                                style: TextStyle(color: Colors.white)),
+                            child: Icon(Icons.notifications_outlined),
+                          ),
                         ),
                       ),
                     ],
